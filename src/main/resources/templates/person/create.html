@@ -5,7 +5,9 @@
   <title>Person</title>
 </head>
 <body>
-  名前: <span th:text="${name}"></span><br>
+  名前: [[${person.name}]]<br>
+  年齢: [[${person.age}]]<br>
+  メールアドレス: [[${person.email}]]<br>
   <a href="/">戻る</a>
 </body>
 </html>
