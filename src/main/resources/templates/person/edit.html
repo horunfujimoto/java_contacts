@@ -2,49 +2,32 @@
 <html xmlns="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Person</title>
+  <title>編集画面</title>
   <style>
     .red{
       color: red;
     }
     .invalid{
-      border: 2px solid red;
+      border:2px solid red;
     }
   </style>
 </head>
 <body>
-  <h2>登録</h2>
-  <form th:action="@{/create}" th:object="${person}" method="post">
+  <h2>編集</h2>
+  <form th:action="@{/update/{id}(id=${id})}" th:object="${person}" method="post">
     <label>名前</label>
     <input type="text" th:field="*{name}" th:errorclass="invalid"><br>
     <div class="red" th:errors="*{name}"></div>
+
     <label>年齢</label>
     <input type="number" th:field="*{age}" th:errorclass="invalid"><br>
     <div class="red" th:errors="*{age}"></div>
+
     <label>メールアドレス</label>
     <input type="email" th:field="*{email}" th:errorclass="invalid"><br>
     <div class="red" th:errors="*{email}"></div>
+
     <button>送信</button>
   </form>
-
-  <h2>一覧</h2>
-  <table>
-    <thead>
-      <tr>
-        <td>ID</td>
-        <td>name</td>
-        <td>age</td>
-        <td>email</td>
-      </tr>
-    </thead>
-    <tr th:each="person : ${people}">
-      <td>[[${person.id}]]</td>
-      <td>[[${person.name}]]</td>
-      <td>[[${person.age}]]</td>
-      <td>[[${person.email}]]</td>
-      <td><a th:href="@{/edit/{id}(id=${person.id})}">編集</a></td>
-      <td><a th:href="@{/delete/{id}(id=${person.id})}">削除</a></td>
-    </tr>
-  </table>
 </body>
 </html>
