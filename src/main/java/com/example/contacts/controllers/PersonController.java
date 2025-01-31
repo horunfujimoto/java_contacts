@@ -67,20 +67,20 @@ public class PersonController {
         return "redirect:/";
     }
 
-    //初期データの投入
-  @PostConstruct
-  public void dataInit(){
-    Person suzuki = new Person();
-    suzuki.setName("鈴木");
-    suzuki.setAge(23);
-    suzuki.setEmail("suzuki@email.com");
-    repository.saveAndFlush(suzuki);
+//     //初期データの投入
+//   @PostConstruct
+//   public void dataInit(){
+//     Person suzuki = new Person();
+//     suzuki.setName("鈴木");
+//     suzuki.setAge(23);
+//     suzuki.setEmail("suzuki@email.com");
+//     repository.saveAndFlush(suzuki);
  
-    Person sato = new Person();
-    sato.setName("佐藤");
-    sato.setAge(20);
-    sato.setEmail("sato@email.com");
-    repository.saveAndFlush(sato);
-   }
+//     Person sato = new Person();
+//     sato.setName("佐藤");
+//     sato.setAge(20);
+//     sato.setEmail("sato@email.com");
+//     repository.saveAndFlush(sato);
+//    }
 
 }
