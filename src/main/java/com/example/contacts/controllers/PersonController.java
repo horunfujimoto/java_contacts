@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.contacts.models.Person;
 import com.example.contacts.repository.PersonRepository;
 
-import jakarta.annotation.PostConstruct;
-
 @Controller
 public class PersonController {
 
